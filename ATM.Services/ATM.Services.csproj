@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ATM.Entities\ATM.Entities.csproj" />
+    <ProjectReference Include="..\ATM.Interfaces\ATM.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

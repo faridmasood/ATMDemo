@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATMDemo", "ATMDemo\ATMDemo.csproj", "{98595097-A30E-46A7-9CB4-A9AA6811FE7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATMDemo", "ATMDemo\ATMDemo.csproj", "{98595097-A30E-46A7-9CB4-A9AA6811FE7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM.Data", "ATM.Data\ATM.Data.csproj", "{6A913734-4768-43FF-8F6D-222014DBBAF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM.Entities", "ATM.Entities\ATM.Entities.csproj", "{8390F860-043A-4010-9101-E8F584E93B26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM.Interfaces", "ATM.Interfaces\ATM.Interfaces.csproj", "{22917FB4-18C3-4994-A9BE-9CEBEB3554C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM.Repositories", "ATM.Repositories\ATM.Repositories.csproj", "{A51F1ADD-3BA7-4D31-9CA4-11DD32116DF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM.Services", "ATM.Services\ATM.Services.csproj", "{34E31A6D-6478-4783-AEFD-15982D484C48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,26 @@ Global
 		{98595097-A30E-46A7-9CB4-A9AA6811FE7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98595097-A30E-46A7-9CB4-A9AA6811FE7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98595097-A30E-46A7-9CB4-A9AA6811FE7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A913734-4768-43FF-8F6D-222014DBBAF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A913734-4768-43FF-8F6D-222014DBBAF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A913734-4768-43FF-8F6D-222014DBBAF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A913734-4768-43FF-8F6D-222014DBBAF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8390F860-043A-4010-9101-E8F584E93B26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8390F860-043A-4010-9101-E8F584E93B26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8390F860-043A-4010-9101-E8F584E93B26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8390F860-043A-4010-9101-E8F584E93B26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22917FB4-18C3-4994-A9BE-9CEBEB3554C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22917FB4-18C3-4994-A9BE-9CEBEB3554C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22917FB4-18C3-4994-A9BE-9CEBEB3554C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22917FB4-18C3-4994-A9BE-9CEBEB3554C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A51F1ADD-3BA7-4D31-9CA4-11DD32116DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A51F1ADD-3BA7-4D31-9CA4-11DD32116DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A51F1ADD-3BA7-4D31-9CA4-11DD32116DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A51F1ADD-3BA7-4D31-9CA4-11DD32116DF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E31A6D-6478-4783-AEFD-15982D484C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E31A6D-6478-4783-AEFD-15982D484C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E31A6D-6478-4783-AEFD-15982D484C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E31A6D-6478-4783-AEFD-15982D484C48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
