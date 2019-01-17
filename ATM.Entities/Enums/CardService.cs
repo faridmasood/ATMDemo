@@ -1,4 +1,4 @@
-﻿namespace ATM.Entities.Enums
+﻿namespace ATM.DataObjects.Enums
 {
     public enum CardService
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ATM.Entities
+namespace ATM.DataObjects.Entities
 {
     public class BaseEntity
     {

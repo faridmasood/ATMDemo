@@ -1,6 +1,6 @@
 ﻿namespace ATM.Interfaces.Application
 {
-    interface IWithdrawValidationService
+    public interface IWithdrawValidationService
     {
         bool Validate(string cardNumber, decimal amount);
     }

@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ATM.Data\ATM.Data.csproj" />
-    <ProjectReference Include="..\ATM.Entities\ATM.Entities.csproj" />
+    <ProjectReference Include="..\ATM.Entities\ATM.DataObjects.csproj" />
     <ProjectReference Include="..\ATM.Interfaces\ATM.Interfaces.csproj" />
   </ItemGroup>
 

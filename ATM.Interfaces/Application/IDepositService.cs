@@ -1,6 +1,6 @@
 ﻿namespace ATM.Interfaces.Application
 {
-    interface IDepositService
+    public interface IDepositService
     {
         void Deposit(string cardNumber, decimal amount);
     }

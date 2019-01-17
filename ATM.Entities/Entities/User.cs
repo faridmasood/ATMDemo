@@ -1,4 +1,4 @@
-﻿namespace ATM.Entities
+﻿namespace ATM.DataObjects.Entities
 {
     public class User : BaseEntity
     {

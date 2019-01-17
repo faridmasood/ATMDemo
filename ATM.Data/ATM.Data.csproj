@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ATM.Entities\ATM.Entities.csproj" />
+    <ProjectReference Include="..\ATM.Entities\ATM.DataObjects.csproj" />
   </ItemGroup>
 
 </Project>

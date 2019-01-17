@@ -1,6 +1,6 @@
 ﻿namespace ATM.Interfaces.Application
 {
-    interface IAuthService
+    public interface IAuthService
     {
         bool Authorize(string cardNumber, string pin);
     }

@@ -1,7 +1,7 @@
-﻿using ATM.Entities.Enums;
+﻿using ATM.DataObjects.Enums;
 using System;
 
-namespace ATM.Entities
+namespace ATM.DataObjects.Entities
 {
     public class Transaction : BaseEntity
     {
