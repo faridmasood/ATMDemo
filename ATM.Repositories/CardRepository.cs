@@ -1,8 +1,14 @@
-﻿using ATM.Interfaces.Data;
+﻿using ATM.Data;
+using ATM.DataObjects.Entities;
+using ATM.Interfaces.Data;
 
 namespace ATM.Repositories
 {
-    class CardRepository : ICardRepository
+    class CardRepository : BaseRepository<Card>, ICardRepository
     {
+        public CardRepository(ATMDataContext context) : base(context)
+        {
+
+        }
     }
 }
