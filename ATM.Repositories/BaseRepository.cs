@@ -14,21 +14,7 @@ namespace ATM.Repositories
         #region Properties
 
         private readonly ATMDataContext _dbContext;
-        //private IUnitOfWork _unitOfWork;
         private readonly DbSet<T> dbSet;
-
-        //protected IDbFactory DbFactory
-        //{
-        //    get;
-        //    private set;
-        //}
-
-        //protected EBMSDBContext DbContext
-        //{
-        //    get { return dbContext ?? (dbContext = DbFactory.Init()); }
-        //}
-
-        //public IUnitOfWork UnitOfWork { get => _unitOfWork; set => _unitOfWork = value; }
 
         #endregion Properties
 
