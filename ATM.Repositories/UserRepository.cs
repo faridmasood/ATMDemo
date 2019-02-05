@@ -9,9 +9,9 @@ using System.Text;
 
 namespace ATM.Repositories
 {
-    class TransactionRepository : BaseRepository<Transaction>, ITransactionRepository
+    class UserRepository : BaseRepository<User>, IUserRepository
     {
-        public TransactionRepository(ATMDataContext context) : base(context)
+        public UserRepository(ATMDataContext context) : base(context)
         {
 
         }

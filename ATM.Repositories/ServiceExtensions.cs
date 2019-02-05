@@ -9,6 +9,8 @@ namespace ATM.Repositories
         {
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<ICardRepository, CardRepository>();
+            services.AddTransient<ITransactionRepository, TransactionRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
         }
     }
 }

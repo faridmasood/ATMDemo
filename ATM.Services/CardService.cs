@@ -1,9 +1,14 @@
 ﻿using ATM.Interfaces.Application;
+using ATM.Interfaces.Data;
 
 namespace ATM.Services
 {
-    class CardService : ICardService
+    class CardService : BaseServiceClass, ICardService
     {
+        public CardService(IUnitOfWork unitOfWork) : base(unitOfWork)
+        {
+        }
+
         public void ChangePin(string cardNumber, string oldPin, string newPin)
         {
             throw new System.NotImplementedException();

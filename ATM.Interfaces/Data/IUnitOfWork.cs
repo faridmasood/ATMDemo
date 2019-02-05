@@ -6,5 +6,7 @@ namespace ATM.Interfaces.Data
     {
         Task SaveChanges();
         ICardRepository CardRepository { get; }
+        ITransactionRepository TransactionRepository { get; }
+        IUserRepository UserRepository { get; }
     }
 }

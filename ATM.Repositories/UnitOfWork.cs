@@ -9,13 +9,21 @@ namespace ATM.Repositories
         private readonly ATMDataContext _dbContext;
 
         public UnitOfWork(ATMDataContext dbContext,
-            ICardRepository cardRepository)
+            ICardRepository cardRepository,
+            ITransactionRepository transactionRepository,
+            IUserRepository userRepository)
         {
             _dbContext = dbContext;
             CardRepository = cardRepository;
+            TransactionRepository = transactionRepository;
+            UserRepository = userRepository;
         }
 
         public ICardRepository CardRepository { get; }
+
+        public ITransactionRepository TransactionRepository { get; }
+
+        public IUserRepository UserRepository { get; }
 
         public async Task SaveChanges()
         {
