@@ -8,6 +8,10 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link href="~/css/custom.css" rel="stylesheet" />
+        <link href="~/css/numPad.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -30,9 +34,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
+                    <li><a asp-page="/Index">Login</a></li>
+                    <li><a asp-page="/About">Dashboard</a></li>
+                    <li><a asp-page="/Contact">Withdraw</a></li>
+                    <li><a asp-page="/Transactions">Transactions</a></li>
+                    <li><a asp-page="/ChangePin">ChangePin</a></li>
+                    <li><a asp-page="/Deposit">Deposit</a></li>
                 </ul>
             </div>
         </div>
