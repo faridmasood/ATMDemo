@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ATM.Services;
 using ATM.Repositories;
+using ATM.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ATMDemo
 {
@@ -21,6 +23,9 @@ namespace ATMDemo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<ATMDataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -33,10 +38,12 @@ namespace ATMDemo
             services.InjectApplicationServices();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env,ATMDataContext dataContext)
         {
             if (env.IsDevelopment())
             {
@@ -47,6 +54,7 @@ namespace ATMDemo
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+            AtmDbInitializar.Initialize(dataContext);
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
