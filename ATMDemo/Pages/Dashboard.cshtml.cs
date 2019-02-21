@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ATMDemo.Pages
 {
-    public class AboutModel : PageModel
+    [Authorize]
+    public class DashboardModel : PageModel
     {
         public string Message { get; set; }
 

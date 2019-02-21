@@ -1,5 +1,5 @@
 ﻿using ATM.Data;
-using ATM.Interfaces.Data;
+using ATM.Core.Data;
 using System.Threading.Tasks;
 
 namespace ATM.Repositories

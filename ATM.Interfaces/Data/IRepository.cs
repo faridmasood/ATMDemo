@@ -1,10 +1,10 @@
-﻿using ATM.DataObjects.Entities;
+﻿using ATM.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace ATM.Interfaces.Data
+namespace ATM.Core.Data
 {
     public interface IRepository<T> where T : BaseEntity
     {

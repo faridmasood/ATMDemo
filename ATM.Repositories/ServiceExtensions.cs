@@ -1,4 +1,4 @@
-﻿using ATM.Interfaces.Data;
+﻿using ATM.Core.Data;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ATM.Repositories

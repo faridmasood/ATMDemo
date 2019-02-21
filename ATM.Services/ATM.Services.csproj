@@ -9,8 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ATM.Entities\ATM.DataObjects.csproj" />
-    <ProjectReference Include="..\ATM.Interfaces\ATM.Interfaces.csproj" />
+    <ProjectReference Include="..\ATM.Interfaces\ATM.Core.csproj" />
   </ItemGroup>
 
 </Project>

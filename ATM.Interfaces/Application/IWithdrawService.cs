@@ -1,4 +1,4 @@
-﻿namespace ATM.Interfaces.Application
+﻿namespace ATM.Core.Application
 {
     public interface IWithdrawService
     {

@@ -1,17 +1,10 @@
 ﻿@page
-@model AboutModel
+@model DashboardModel
 @{
     ViewData["Title"] = "About";
 }
 
-
 <div class="container">
-    <div class="demo-headline" style="padding:0px;">
-        <h1 class="demo-logo">
-            ATM
-            <small>Online Banking</small>
-        </h1>
-    </div> <!-- /demo-headline -->
     <div class="row col-xs-12">
         <div class="panel panel-info ">
             <!-- Place <h1></h1> below -->
@@ -22,52 +15,60 @@
             <div class="row" style="padding:10px">
                 <div class="col-xs-3">
                     <div class="tile">
-                        <img src="~/images/quick_cash.png" alt="Quick Cash" class="tile-image big-illustration">
-                        <h3 class="tile-title">Quick Cash</h3>
+                        <a asp-page="/Withdraw">
+                            <img src="~/images/quick_cash.png" alt="Quick Cash" class="tile-image big-illustration">
+                            <h3 class="tile-title">Quick Cash</h3>
+                        </a>
                         <p>Make aneasy cash withdraw!</p>
                     </div>
                 </div>
 
                 <div class="col-xs-3">
                     <div class="tile">
-                        <img src="~/images/icons/png/Clipboard.png" alt="Accounts" class="tile-image" />
-                        @*<img src="~/images/accounts_checklist.png" alt="Accounts" class="tile-image">*@
-                        <h3 class="tile-title">Transactions(s)</h3>
+                        <a asp-page="/Transactions">
+                            <img src="~/images/icons/png/Clipboard.png" alt="Accounts" class="tile-image" />
+                            @*<img src="~/images/accounts_checklist.png" alt="Accounts" class="tile-image">*@
+                            <h3 class="tile-title">Transactions(s)</h3>
+                        </a>
                         <p>View available transacions and more...</p>
                     </div>
                 </div>
 
                 <div class="col-xs-3">
                     <div class="tile">
-                        <img src="~/images/deposit_vault.png" alt="Deposits" class="tile-image">
-                        <h3 class="tile-title">Make a Deposite</h3>
+                        <a asp-page="/Deposit">
+                            <img src="~/images/deposit_vault.png" alt="Deposits" class="tile-image">
+                            <h3 class="tile-title">Make a Deposite</h3>
+                        </a>
                         <p>Make a easy deposite.</p>
                     </div>
                 </div>
                 <div class="col-xs-3">
                     <div class="tile">
-                        <img src="~/images/accounts_checklist.png" alt="Accounts" class="tile-image">
-                        <h3 class="tile-title">Change Pin</h3>
+                        <a asp-page="/ChangePin">
+                            <img src="~/images/accounts_checklist.png" alt="Accounts" class="tile-image">
+                            <h3 class="tile-title">Change Pin</h3>
+                        </a>
                         <p>Edit your Card Pin </p>
                     </div>
                 </div>
                 <!-- Button -->
-                <div class="row col-xs-12" style="margin:10px" >
+                <div class="row col-xs-12" style="margin:10px">
                     <!-- Button -->
                     <div class="col-sm-12 controls">
-                        <a id="btn-login" href="#" class="btn btn-success btn-padding">
+                        <a id="btn-login" asp-page="/Logout" class="btn btn-success btn-padding">
                             <span class="glyphicon glyphicon-log-out"></span> Logout
                         </a>
-                        <a id="btn-cancel" href="#" class="btn btn-danger btn-padding">
+                        <!-- <a id="btn-cancel" href="#" class="btn btn-danger btn-padding">
                             <span class="glyphicon glyphicon-remove"></span> Cancel
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </div> <!-- // END OPTIONS-->
 
 
         </div><!--  // END panel column-->
-        
+
     </div><!-- // END row-->
 
 </div> <!-- /container -->
