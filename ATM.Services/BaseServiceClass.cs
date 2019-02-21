@@ -1,4 +1,4 @@
-﻿using ATM.Interfaces.Data;
+﻿using ATM.Core.Data;
 
 namespace ATM.Services
 {

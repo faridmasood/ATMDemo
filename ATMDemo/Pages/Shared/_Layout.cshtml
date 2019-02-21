@@ -34,12 +34,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Login</a></li>
-                    <li><a asp-page="/About">Dashboard</a></li>
-                    <li><a asp-page="/Contact">Withdraw</a></li>
-                    <li><a asp-page="/Transactions">Transactions</a></li>
-                    <li><a asp-page="/ChangePin">ChangePin</a></li>
-                    <li><a asp-page="/Deposit">Deposit</a></li>
+                    @if (Context.User.Identity.IsAuthenticated)
+                    {
+                        <li><a asp-page="/Logout">Logout</a></li>
+                        <li><a asp-page="/Dashboard">Dashboard</a></li>
+                        <li><a asp-page="/Withdraw">Withdraw</a></li>
+                        <li><a asp-page="/Transactions">Transactions</a></li>
+                        <li><a asp-page="/ChangePin">ChangePin</a></li>
+                        <li><a asp-page="/Deposit">Deposit</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-page="/Index">Login</a></li>
+                    }
+
+
                 </ul>
             </div>
         </div>
@@ -48,6 +57,14 @@
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
+        <div class="container">
+            <div class="demo-headline" style="padding:0px;">
+                <h1 class="demo-logo">
+                    ATM
+                    <small>Online Banking</small>
+                </h1>
+            </div> <!-- /demo-headline -->
+        </div>
         @RenderBody()
         <hr />
         <footer>

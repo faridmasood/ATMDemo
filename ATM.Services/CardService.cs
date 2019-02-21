@@ -1,5 +1,5 @@
-﻿using ATM.Interfaces.Application;
-using ATM.Interfaces.Data;
+﻿using ATM.Core.Application;
+using ATM.Core.Data;
 
 namespace ATM.Services
 {

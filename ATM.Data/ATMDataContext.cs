@@ -1,4 +1,4 @@
-﻿using ATM.DataObjects.Entities;
+﻿using ATM.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -15,9 +15,6 @@ namespace ATM.Data
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            //builder.Entity<User>().HasData(
-            //    new User() { Name = "Ali", MobileNumber = 0723263414, Created = new DateTime(), Updated = new DateTime(100), UserId = new Guid() });
-
             base.OnModelCreating(builder);
         }
     }

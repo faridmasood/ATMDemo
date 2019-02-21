@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ATM.DataObjects.Entities;
-using ATM.DataObjects.Enums;
+using ATM.Core.Entities;
+using ATM.Core.Enums;
 using System.Text;
+using ATM.Core.Framework.Encryption;
 
 namespace ATM.Data
 {
     public class AtmDbInitializar
     {
-        public static void RecreateDatabase(ATMDataContext context)
+        public static void AutomateMigrations(ATMDataContext context)
         {
             //context.Database.EnsureDeleted();
             //context.Database.EnsureCreated();
         }
-        public static void Initialize(ATMDataContext context)
+        public static void Initialize(ATMDataContext context, IHashProvider hashProvider)
         {
             if (!context.Users.Any())
             {
@@ -49,19 +50,19 @@ namespace ATM.Data
                 {
                     new Card
                     {
-                        Limit= 5000 , ExpiryDate = new DateTime().AddYears(2), CSV =123, PinCode="4321",
+                        Limit= 5000 , ExpiryDate = new DateTime().AddYears(2), CSV =123, PinCode= hashProvider.GetHash( "4321"),
                         User = context.Users.FirstOrDefault(u=>u.Id==Id1),
                         Type = CardType.Debit, CardNumber="1234567890"
                     },
                     new Card
                     {
-                        Limit= 5000 ,ExpiryDate = new DateTime().AddYears(3), CSV =456, PinCode="1234",
+                        Limit= 5000 ,ExpiryDate = new DateTime().AddYears(3), CSV =456, PinCode= hashProvider.GetHash("1234"),
                         User = context.Users.FirstOrDefault(u=>u.Id==Id2),
                         Type = CardType.Debit, CardNumber="1234567891"
                     },
                     new Card
                     {
-                         Limit= 5000 , ExpiryDate = new DateTime().AddYears(4), CSV =789, PinCode="5678",
+                         Limit= 5000 , ExpiryDate = new DateTime().AddYears(4), CSV =789, PinCode=hashProvider.GetHash("5678"),
                         User =context.Users.FirstOrDefault(u=>u.Id==Id3),
                         Type = CardType.Debit, CardNumber="1234567892"
                     },

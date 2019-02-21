@@ -19,7 +19,7 @@ namespace ATM.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ATM.DataObjects.Entities.Card", b =>
+            modelBuilder.Entity("ATM.Core.Entities.Card", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
@@ -53,7 +53,7 @@ namespace ATM.Data.Migrations
                     b.ToTable("Cards");
                 });
 
-            modelBuilder.Entity("ATM.DataObjects.Entities.Transaction", b =>
+            modelBuilder.Entity("ATM.Core.Entities.Transaction", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
@@ -79,7 +79,7 @@ namespace ATM.Data.Migrations
                     b.ToTable("Transactions");
                 });
 
-            modelBuilder.Entity("ATM.DataObjects.Entities.User", b =>
+            modelBuilder.Entity("ATM.Core.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
@@ -97,17 +97,17 @@ namespace ATM.Data.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("ATM.DataObjects.Entities.Card", b =>
+            modelBuilder.Entity("ATM.Core.Entities.Card", b =>
                 {
-                    b.HasOne("ATM.DataObjects.Entities.User", "User")
+                    b.HasOne("ATM.Core.Entities.User", "User")
                         .WithMany("Cards")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("ATM.DataObjects.Entities.Transaction", b =>
+            modelBuilder.Entity("ATM.Core.Entities.Transaction", b =>
                 {
-                    b.HasOne("ATM.DataObjects.Entities.Card", "Card")
+                    b.HasOne("ATM.Core.Entities.Card", "Card")
                         .WithMany("Transactions")
                         .HasForeignKey("CardId")
                         .OnDelete(DeleteBehavior.Cascade);

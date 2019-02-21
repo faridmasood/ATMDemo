@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace ATM.Interfaces.Data
+namespace ATM.Core.Data
 {
     public interface IUnitOfWork
     {

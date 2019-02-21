@@ -1,5 +1,5 @@
 ﻿using ATM.Data;
-using ATM.DataObjects.Entities;
+using ATM.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -24,6 +24,13 @@ namespace ATM.Repositories
             dbSet = _dbContext.Set<T>();
         }
 
+        protected ATMDataContext DataContext
+        {
+            get
+            {
+                return _dbContext;
+            }
+        }
         public virtual void Add(T entity)
         {
             entity.Created = DateTime.Now;

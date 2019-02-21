@@ -1,8 +1,8 @@
 ﻿using ATM.Data;
-using ATM.DataObjects.DTOs;
-using ATM.DataObjects.Entities;
-using ATM.DataObjects.Enums;
-using ATM.Interfaces.Data;
+using ATM.Core.DTOs;
+using ATM.Core.Entities;
+using ATM.Core.Enums;
+using ATM.Core.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;

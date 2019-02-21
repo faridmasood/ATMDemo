@@ -1,6 +1,6 @@
-﻿using ATM.DataObjects.Entities;
+﻿using ATM.Core.Entities;
 
-namespace ATM.Interfaces.Data
+namespace ATM.Core.Data
 {
     public interface IUserRepository : IRepository<User>
     {

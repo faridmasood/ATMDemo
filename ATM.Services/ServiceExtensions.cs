@@ -1,4 +1,4 @@
-﻿using ATM.Interfaces.Application;
+﻿using ATM.Core.Application;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ATM.Services

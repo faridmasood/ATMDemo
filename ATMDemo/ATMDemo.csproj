@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ATM.Interfaces\ATM.Interfaces.csproj" />
+    <ProjectReference Include="..\ATM.Interfaces\ATM.Core.csproj" />
     <ProjectReference Include="..\ATM.Repositories\ATM.Repositories.csproj" />
     <ProjectReference Include="..\ATM.Services\ATM.Services.csproj" />
   </ItemGroup>
