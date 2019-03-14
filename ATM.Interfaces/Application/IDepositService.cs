@@ -1,7 +1,9 @@
-﻿namespace ATM.Core.Application
+﻿using System.Threading.Tasks;
+
+namespace ATM.Core.Application
 {
     public interface IDepositService
     {
-        void Deposit(string cardNumber, decimal amount);
+        Task<bool> DepositAsync(string cardNumber, decimal amount);
     }
 }

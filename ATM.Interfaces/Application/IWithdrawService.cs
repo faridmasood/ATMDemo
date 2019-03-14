@@ -1,7 +1,9 @@
-﻿namespace ATM.Core.Application
+﻿using System.Threading.Tasks;
+
+namespace ATM.Core.Application
 {
     public interface IWithdrawService
     {
-        void Withdraw(string cardNumber, decimal amount);
+        Task<bool> WithdrawAsync(string cardNumber, decimal amount);
     }
 }

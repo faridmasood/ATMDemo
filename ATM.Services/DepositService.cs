@@ -4,7 +4,7 @@ using ATM.Core.Entities;
 using ATM.Core.Enums;
 using System;
 using AutoMapper;
-
+using System.Threading.Tasks;
 
 namespace ATM.Services
 {
@@ -19,7 +19,7 @@ namespace ATM.Services
 
         }
 
-        public void Deposit(string cardNumber, decimal amount)
+        public async Task<bool> DepositAsync(string cardNumber, decimal amount)
         {
             var card = _unitOfWork.CardRepository.GetByCardNumber(cardNumber);
             var balance = card.Balance;
@@ -37,7 +37,8 @@ namespace ATM.Services
             _unitOfWork.TransactionRepository.Add(entity);
             if (amount != 0)
                 card.Balance += amount;
-            _unitOfWork.SaveChanges();
+            await _unitOfWork.SaveChanges();
+            return true;
         }
     }
 }

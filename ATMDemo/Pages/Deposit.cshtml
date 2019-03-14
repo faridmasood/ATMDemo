@@ -22,6 +22,12 @@
                         <span class="glyphicon glyphicon-usd"></span>@Model.Balance
                     </h4>
                 </div>
+                <div class="alert alert-danger text-center" role="alert">
+                    <h6 class="alert-link text-center">
+                        <i class="glyphicon glyphicon glyphicon-info-sign"></i>
+                        @Model.Message
+                    </h6>
+                </div>
                 <div class="row">
                     <div class="col-md-1 text-center"></div>
                     <div class="col-md-8">
@@ -107,13 +113,6 @@
                     </div>
                 </div> <!-- // END OPTIONS-->
             </div><!--  // END column-->
-            <div class="alert alert-danger text-center" role="alert">
-                <h6 class="alert-link text-center">
-                    <i class="glyphicon glyphicon glyphicon-info-sign"></i>
-                    @Model.Message
-                </h6>
-                <h5 class="alert-link text-center"><i class="glyphicon glyphicon glyphicon-info-sign"></i> Or input an desired amount, Must be lower than $1000</h5>
-            </div>
         </div><!-- // END row-->
     </div><!--  // END panel column-->
 </div> <!-- /container -->

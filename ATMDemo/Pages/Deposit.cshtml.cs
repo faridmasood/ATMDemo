@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
+using System.Threading.Tasks;
 using ATM.Core.Application;
 using ATM.Core.DTOs;
-using ATM.Core.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -20,9 +18,7 @@ namespace ATMDemo.Pages
         [TempData] public string Message { get; set; }
 
         public ICollection<TransactionDTO> transactionDTOs = new List<TransactionDTO>();
-        // temp user
-        public Guid tempUser = new Guid("EAFACF41-5A3C-49D1-A612-08D692741F4C");
-        
+           
         public DepositModel(ITransactionService transactionService, IDepositService depositService)
         {
             _transactionService = transactionService;
@@ -31,14 +27,20 @@ namespace ATMDemo.Pages
         }
         public void OnGet()
         {
-            transactionDTOs = _transactionService.GetCardTransanctions(tempUser);
             Balance = _transactionService.GetCurrentBalance(HttpContext.User.Claims.First().Value);
         }
 
-        public IActionResult OnPost(int value)
+        public async Task<IActionResult> OnPostAsync(int value)
         {
             var cardNum = HttpContext.User.Claims.First().Value;
-            _depositService.Deposit(cardNum, value);
+            //_transactionService.AddTransaction(cardNum, value, DateTime.Now, TransactionType.Deposit);
+            var success = await _depositService.DepositAsync(cardNum, value);
+            if (success)
+            {
+                Message = "Amount is deposit to your account";
+                return Page();
+            }
+            Message = "Amount could not deposit to your account";
             return Page();
         }
     }

@@ -21,22 +21,31 @@ namespace ATM.Services
         {
             _unitOfWork = unitOfWork;
             _mapp = mapp;
-
         }
 
         public void AddTransaction(string cardNumber, decimal amount, DateTime date, TransactionType type)
         {
             var card = _unitOfWork.CardRepository.GetByCardNumber(cardNumber);
-            var balance = _unitOfWork.TransactionRepository.GetBalance(cardNumber);
+            //var balance = _unitOfWork.TransactionRepository.GetBalance(cardNumber);
+            var balance = card.Balance;
+            decimal newBalance;
+            if (TransactionType.Deposit == type)
+            {
+                newBalance = balance + amount;
+            }
+            else
+            {
+                newBalance = balance - amount;
+            }
             var dto = new Transaction
             {
                 Amount = amount,
                 Dated = DateTime.Now,
                 Type = type,
-                Balance = balance + amount
-
+                Balance = newBalance
             };
             // no transaction after 10.Or closed for service
+            card.Balance = newBalance;
             var entity = _mapp.Map<Transaction>(dto);
             entity.Card = card;
             _unitOfWork.TransactionRepository.Add(entity);
@@ -52,7 +61,7 @@ namespace ATM.Services
         public decimal GetCurrentBalance(string cardNum)
         {
             var balance = _unitOfWork.CardRepository.GetByCardNumber(cardNum).Balance;
-               // TransactionRepository.GetBalance(cardNum);
+            // TransactionRepository.GetBalance(cardNum);
             return balance;
         }
     }

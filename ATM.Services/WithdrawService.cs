@@ -4,7 +4,7 @@ using ATM.Core.Entities;
 using ATM.Core.Enums;
 using AutoMapper;
 using System;
-
+using System.Threading.Tasks;
 
 namespace ATM.Services
 {
@@ -19,9 +19,8 @@ namespace ATM.Services
 
         }
 
-        public void Withdraw(string cardNumber, decimal amount)
+        public async Task<bool> WithdrawAsync(string cardNumber, decimal amount)
         {
-
             var card = _unitOfWork.CardRepository.GetByCardNumber(cardNumber);
             var balance = card.Balance;
             var dto = new Transaction
@@ -39,7 +38,8 @@ namespace ATM.Services
             //_unitOfWork.SaveChanges();
             if (amount != 0)
                 card.Balance -= amount;
-            _unitOfWork.SaveChanges();
+            await _unitOfWork.SaveChanges();
+            return true;
         }
     }
 }
