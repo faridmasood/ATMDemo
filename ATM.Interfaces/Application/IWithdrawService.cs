@@ -2,6 +2,6 @@
 {
     public interface IWithdrawService
     {
-        bool Withdraw(string cardNumber, decimal amount);
+        void Withdraw(string cardNumber, decimal amount);
     }
 }

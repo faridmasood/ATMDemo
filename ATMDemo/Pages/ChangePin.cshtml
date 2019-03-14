@@ -14,80 +14,69 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-md-12">
                     <!-- Place <h1></h1> below -->
                     <div class="alert alert-success text-center" role="alert">
+                        @*<a href="#" class="alert-link text-center"><i class="glyphicon glyphicon-credit-card"></i> @Model.transactionDTOs.LastOrDefault().Card.CardNumber </a>*@
                         <a href="#" class="alert-link text-center"><i class="glyphicon glyphicon-credit-card"></i> ####-####-#####-435 </a>
                     </div>
-                    <!-- 3/4 -->
-                    <div class="col-xs-9">
-                        <!-- Change Pin -->
-                        <div class="col-xs-6 ">
-                            <div class="panel panel-warning">
-                                <!-- Default panel contents -->
-                                <div class="panel-heading text-center">Change Card Pin</div>
-                                <form style="padding:1rem">
-                                    <div class="form-group">
-                                        <label for="oldPin">Old Pin:</label>
-                                        <input type="password" class="form-control" id="oldPin" placeholder="Enter Old Pin" name="oldPin">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="newPin">New Pin:</label>
-                                        <input type="text" class="form-control" id="newPin" placeholder="Enter New Pin" name="newPin">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="rnewPin">Confirm New Pin:</label>
-                                        <input type="text" class="form-control" id="rnewPin" placeholder="Enter New Pin" name="rnewPin">
-                                    </div>
-                                    <button type="submit" class="btn btn-lg btn-primary btn-padding">
-                                        <span class="glyphicon glyphicon-ok"></span> Submit
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-xs-6">
-                            <div class="panel panel-info">
-                                <!-- Default panel contents -->
-                                <div class="panel-heading text-center">Change Mobile Number</div>
-                                <form style="padding:1rem">
-                                    <div class="form-group">
-                                        <label for="oldMbnum">Old Mobile Number:</label>
-                                        <input type="text" class="form-control" id="oldmb" placeholder="Enter Old Mobile Number" name="oldmb">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="newMbnum">New Mobile Number:</label>
-                                        <input type="text" class="form-control" id="newMbnum" placeholder="Enter New Mobile Number" name="newMbnum">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="rnewMbnum">Confirm New Mobile Number:</label>
-                                        <input type="text" class="form-control" id="rnewMbnum" placeholder="Enter New Mobile Number" name="rnewMbnum">
-                                    </div>
-                                    <button type="submit" class="btn btn-lg btn-primary btn-padding">
-                                        <span class="glyphicon glyphicon-ok"></span> Submit
-                                    </button>
-                                </form>
-                            </div>
+                    <!-- Change Pin -->
+                    <div class="col-md-5 ">
+                        <div class="panel panel-warning">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading text-center">Change Card Pin</div>
+                            <form style="padding:1rem" method="post">
+                                <div class="form-group">
+                                    <label for="oldPin">Old Pin:</label>
+                                    <input type="password" class="form-control" id="oldPin" placeholder="Enter Old Pin" name="oldPin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newPin">New Pin:</label>
+                                    <input type="text" class="form-control" id="newPin" placeholder="Enter New Pin" name="newPin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rnewPin">Confirm New Pin:</label>
+                                    <input type="text" class="form-control" id="rnewPin" placeholder="Enter New Pin" name="rnewPin">
+                                </div>
+                                <button type="submit" class="btn btn-lg btn-primary btn-padding">
+                                    <span class="glyphicon glyphicon-ok"></span> Submit
+                                </button>
+                            </form>
                         </div>
                     </div>
-                    <!-- 1/4 -->
-                    <div class="col-xs-3">
+                    <div class="col-md-5">
+                        <div class="panel panel-info">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading text-center">Change Mobile Number</div>
+                            <form style="padding:1rem">
+                                <div class="form-group">
+                                    <label for="oldMbnum">Old Mobile Number:</label>
+                                    <input type="text" class="form-control" id="oldmb" placeholder="Enter Old Mobile Number" name="oldMbnum">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newMbnum">New Mobile Number:</label>
+                                    <input type="text" class="form-control" id="newMbnum" placeholder="Enter New Mobile Number" name="newMbnum">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rnewMbnum">Confirm New Mobile Number:</label>
+                                    <input type="text" class="form-control" id="rnewMbnum" placeholder="Enter New Mobile Number" name="rnewMbnum">
+                                </div>
+                                <button type="submit" class="btn btn-lg btn-primary btn-padding">
+                                    <span class="glyphicon glyphicon-ok"></span> Submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center">
                         <!-- Button -->
                         <div id="sidePad">
-                            <a id="btn-back" href="#" class="btn btn-lg btn-warning btn-padding">
-                                <span class="glyphicon glyphicon-arrow-left"></span> Back
+                            <a id="btn-login" asp-page="/Dashboard" class="btn btn-lg btn-warning btn-padding">
+                                <span class="glyphicon glyphicon-chevron-left"></span> Back
                             </a>
-
-
-                            <a id="btn-login" href="#" class="btn btn-lg btn-success btn-padding">
+                            <a id="btn-login" asp-page="/Logout" class="btn btn-lg btn-success btn-padding">
                                 <span class="glyphicon glyphicon-log-out"></span> Logout
                             </a>
-
-
-                            <a id="btn-cancel" href="#" class="btn btn-lg btn-danger btn-padding">
-                                <span class="glyphicon glyphicon-remove"></span> Cancel
-                            </a>
                         </div>
-
                     </div>
 
                 </div> <!-- // END OPTIONS-->

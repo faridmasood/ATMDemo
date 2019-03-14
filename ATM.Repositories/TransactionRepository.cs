@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace ATM.Repositories
 {
@@ -18,7 +19,7 @@ namespace ATM.Repositories
 
         public ICollection<TransactionDTO> GetAllTransanctions(Guid CardId)
         {
-            //var trans = DataContext.Transactions.Where(item => item.CardId == CardId);
+            //var trans = base.DataContext.Transactions.Where(item => item.CardId == CardId).AsNoTracking();
             //return trans;
             return (from t in DataContext.Transactions
                     where t.CardId.Equals(CardId)
@@ -33,6 +34,12 @@ namespace ATM.Repositories
                         Updated = t.Updated,
                         Id = t.Id
                     }).ToList();
+        }
+
+        public decimal GetBalance(string cardNumber)
+        {
+            var currentBalance = DataContext.Cards.Where(c => c.CardNumber == cardNumber).FirstOrDefault().Balance;
+            return currentBalance;
         }
     }
 }
