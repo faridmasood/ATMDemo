@@ -4,36 +4,38 @@
     ViewData["Title"] = "Deposit";
 }
 <div class="container">
-    <div class=" col-md-9 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="row col-md-12 text-center">
+        @*<div class=" col-md-12 col-md-offset-3 col-sm-8 col-sm-offset-2">*@
         <div class="panel panel-info ">
             <!-- Place <h1></h1> below -->
             <div class="panel-heading">
                 <div class="panel-title text-uppercase text-center">Deposit Funds</div>
-                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">need iformation?</a></div>
+                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">need information?</a></div>
             </div>
             <div class="panel">
                 <div class="alert alert-success text-center" role="alert">
-                    <a href="#" class="alert-link text-center"><i class="glyphicon glyphicon-credit-card"></i> ####-####-#####-435 </a>
-                </div>  
-                    <div class="tile">
-                        <h4 class="text-uppercase balance"><span>Balance</span>$1,103,500.32</h4>
-                    </div>
+                    <a class="alert-link text-center"><i class="glyphicon glyphicon-credit-card"></i>@Model.HttpContext.User.Claims.FirstOrDefault().Value</a>
+                </div>
+                <div class="tile">
+                    <h4 class="text-uppercase balance">
+                        YOUR CURRENT BALANCE IS :
+                        <span class="glyphicon glyphicon-usd"></span>@Model.Balance
+                    </h4>
+                </div>
                 <div class="row">
-                    <!-- 3/4 -->
-                    <div class="col-xs-6">
+                    <div class="col-md-1 text-center"></div>
+                    <div class="col-md-8">
                         <div class="row">
                             <!-- CALCULATOR -->
                             <div id="calcMain">
                                 <div id="calculator">
-                                    
                                     <!-- <h4 class="row">Calculator</h4> -->
-                                    <form align="center">
+                                    <form align="center" method="post">
                                         <table>
                                             <!-- <h3 class="row" align="center"><b>Calculator</b></h3> -->
                                             <tr>
                                                 <td colspan="8" align="center">
-                                                    <div id="demo" align="right">
-                                                    </div>
+                                                    <input id="demo" align="right" name="value" />
                                                     <!--  <input type="text" name="display" id=""> -->
                                                 </td>
                                             </tr>
@@ -80,42 +82,38 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="4">
-                                                    <a id="btnConfirm" href="#" class="btn btn-lg btn-primary text-uppercase">
+                                                    <button id="btnConfirm" href="#" class="btn btn-lg btn-primary text-uppercase">
                                                         <span class="glyphicon glyphicon-ok-sign"></span> Deposit
-                                                    </a>
+                                                    </button>
                                                 </td>
 
                                             </tr>
                                         </table>
                                     </form>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
-                    <!-- 1/4 -->
-                    <div class="col-xs-3">
+                    <div class="col-md-3 text-center">
                         <!-- Button -->
                         <div id="sidePad">
-                            <a id="btn-back" href="#" class="btn btn-lg btn-warning btn-padding">
+                            <a id="btn-login" asp-page="/Dashboard" class="btn btn-lg btn-warning btn-padding">
                                 <span class="glyphicon glyphicon-chevron-left"></span> Back
                             </a>
-
-
-                            <a id="btn-login" href="#" class="btn btn-lg btn-success btn-padding">
+                            <a id="btn-login" asp-page="/Logout" class="btn btn-lg btn-success btn-padding">
                                 <span class="glyphicon glyphicon-log-out"></span> Logout
                             </a>
-
-
-                            <a id="btn-cancel" href="#" class="btn btn-lg btn-danger btn-padding">
-                                <span class="glyphicon glyphicon-remove"></span> Cancel
-                            </a>
                         </div>
-
                     </div>
                 </div> <!-- // END OPTIONS-->
             </div><!--  // END column-->
+            <div class="alert alert-danger text-center" role="alert">
+                <h6 class="alert-link text-center">
+                    <i class="glyphicon glyphicon glyphicon-info-sign"></i>
+                    @Model.Message
+                </h6>
+                <h5 class="alert-link text-center"><i class="glyphicon glyphicon glyphicon-info-sign"></i> Or input an desired amount, Must be lower than $1000</h5>
+            </div>
         </div><!-- // END row-->
     </div><!--  // END panel column-->
 </div> <!-- /container -->
