@@ -14,9 +14,6 @@ using ATM.Core.Framework.Encryption;
 using ATMDemo.Services;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
-using AutoMapper;
-using ATM.Core.Entities;
-using ATM.Core.DTOs;
 
 namespace ATMDemo
 {
@@ -60,9 +57,6 @@ namespace ATMDemo
                 }
             );
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            // Mapping entities to dto 
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Transaction, TransactionDTO>()).CreateMapper();
-            services.AddSingleton(config);
 
             services.AddTransient<ILoginService, LoginService>();
         }

@@ -39,7 +39,6 @@ namespace ATM.Repositories
 
         public virtual void Update(T entity)
         {
-            entity.Updated = DateTime.Now;
             dbSet.Attach(entity);
             _dbContext.Entry(entity).State = EntityState.Modified;
         }

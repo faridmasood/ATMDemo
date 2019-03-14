@@ -1,5 +1,7 @@
-﻿using ATM.Core.Application;
+﻿using ATM.Core.Entities;
+using ATM.Core.Application;
 using ATM.Core.Data;
+using System;
 using ATM.Core.Framework.Encryption;
 
 namespace ATM.Services

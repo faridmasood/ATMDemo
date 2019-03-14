@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "About";
 }
+
 <div class="container">
     <div class="row col-xs-12">
         <div class="panel panel-info ">
@@ -18,19 +19,21 @@
                             <img src="~/images/quick_cash.png" alt="Quick Cash" class="tile-image big-illustration">
                             <h3 class="tile-title">Quick Cash</h3>
                         </a>
-                        <p>Make an easy cash withdraw!</p>
+                        <p>Make aneasy cash withdraw!</p>
                     </div>
                 </div>
+
                 <div class="col-xs-3">
                     <div class="tile">
                         <a asp-page="/Transactions">
                             <img src="~/images/icons/png/Clipboard.png" alt="Accounts" class="tile-image" />
                             @*<img src="~/images/accounts_checklist.png" alt="Accounts" class="tile-image">*@
-                            <h3 class="tile-title">Transactions</h3>
+                            <h3 class="tile-title">Transactions(s)</h3>
                         </a>
                         <p>View available transacions and more...</p>
                     </div>
                 </div>
+
                 <div class="col-xs-3">
                     <div class="tile">
                         <a asp-page="/Deposit">
@@ -62,6 +65,10 @@
                     </div>
                 </div>
             </div> <!-- // END OPTIONS-->
+
+
         </div><!--  // END panel column-->
+
     </div><!-- // END row-->
+
 </div> <!-- /container -->

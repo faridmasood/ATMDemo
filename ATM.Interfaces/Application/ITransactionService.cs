@@ -9,7 +9,7 @@ namespace ATM.Core.Application
     public interface ITransactionService
     {
         void AddTransaction(string cardNumber, decimal amount, DateTime date, TransactionType type);
-        ICollection<TransactionDTO> GetCardTransanctions(Guid UserId, int numberOfTransactions = 5);
-        decimal GetCurrentBalance(string cardNumb);
+        ICollection<TransactionDTO> GetTransactions(Guid UserId, int numberOfTransactions = 5);
+        ICollection<TransactionDTO> GetCardTransanctions(Guid CardId);
     }
 }
