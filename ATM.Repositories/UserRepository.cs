@@ -6,6 +6,7 @@ using ATM.Core.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace ATM.Repositories
 {
@@ -14,6 +15,12 @@ namespace ATM.Repositories
         public UserRepository(ATMDataContext context) : base(context)
         {
 
+        }
+
+        public User GetUser(Guid userId)
+        {
+            var user = DataContext.Users.FirstOrDefault(u => u.Id == userId);
+            return user;
         }
     }
 }

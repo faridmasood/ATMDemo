@@ -22,6 +22,7 @@ namespace ATM.Services
         public async Task<bool> WithdrawAsync(string cardNumber, decimal amount)
         {
             var card = _unitOfWork.CardRepository.GetByCardNumber(cardNumber);
+            //var todayTransactions = _unitOfWork.TransactionRepository.
             var balance = card.Balance;
             var dto = new Transaction
             {

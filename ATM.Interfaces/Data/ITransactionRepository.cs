@@ -11,6 +11,5 @@ namespace ATM.Core.Data
         ICollection<TransactionDTO> GetAllTransanctions(Guid guid);
         //  ICollection<TransactionDTO> PostTransanctions(string cardNumber, decimal amount, DateTime date, TransactionType type);
         decimal GetBalance(string cardNum);
-
     }
 }

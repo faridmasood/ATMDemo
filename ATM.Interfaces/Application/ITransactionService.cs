@@ -11,5 +11,6 @@ namespace ATM.Core.Application
         void AddTransaction(string cardNumber, decimal amount, DateTime date, TransactionType type);
         ICollection<TransactionDTO> GetCardTransanctions(Guid UserId, int numberOfTransactions = 5);
         decimal GetCurrentBalance(string cardNumb);
+        decimal GetTodayWitdrawAmount(Guid CardId);
     }
 }

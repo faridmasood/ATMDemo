@@ -57,7 +57,7 @@
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
-        <div class="container">
+        <div class="container center-block">
             <div class="demo-headline" style="padding:0px;">
                 <h1 class="demo-logo">
                     ATM
@@ -76,6 +76,7 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/calc.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
@@ -91,6 +92,7 @@
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
+       
     </environment>
 
     @RenderSection("Scripts", required: false)

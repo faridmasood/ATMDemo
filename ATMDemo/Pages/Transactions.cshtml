@@ -16,8 +16,7 @@
                 <div class="col-md-12">
                     <!-- Place <h1></h1> below -->
                     <div class="alert alert-success text-center" role="alert">
-                        <a href="#" class="alert-link text-center"><i class="glyphicon glyphicon-credit-card"></i>@Model.HttpContext.User.Claims.FirstOrDefault().Value</a>
-                        <!--   <a href="#" class="alert-link text-center"><i class="glyphicon glyphicon-credit-card"></i> ####-####-#####-435 </a>-->
+                        <a href="#" class="alert-link text-center"><i class="glyphicon glyphicon-credit-card"></i> @Model.HttpContext.User.Claims.FirstOrDefault().Value</a>
                     </div>
                     <!-- 3/4 -->
                     <div class="col-md-9">
@@ -33,10 +32,10 @@
                             <!-- Default panel contents -->
                             <div class="panel-heading text-center">All Transaction</div>
                             <!-- Table -->
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Transaction Type</th>
+                            <table class="table table-striped">
+                                <thead >
+                                    <tr class="info">
+                                        <th>Type</th>
                                         <th>Nature</th>
                                         <th>Amount</th>
                                         <th>Currency</th>
@@ -47,14 +46,14 @@
                                 <tbody>
                                     @foreach (var item in Model.transactionDTOs)
                                     {
-                                    <tr class="success">
-                                        <td>@Html.DisplayFor(modelItem => item.Type)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Type)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Amount)</td>
-                                        <td>USD</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Created)</td>
-                                        <th>@Html.DisplayFor(modelItem => item.Balance)</th>
-                                    </tr>
+                                        <tr>
+                                            <td>@Html.DisplayFor(modelItem => item.Type)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.Type)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.Amount)</td>
+                                            <td>USD</td>
+                                            <td>@Html.DisplayFor(modelItem => item.Created)</td>
+                                            <th>@Html.DisplayFor(modelItem => item.Balance)</th>
+                                        </tr>
                                     }
                                 </tbody>
                             </table>
@@ -64,18 +63,15 @@
                     <div class="col-md-3 text-center">
                         <!-- Button -->
                         <div id="sidePad">
-                            <button id="btn-login" onclick="OnPost()" class="btn btn-lg btn-warning btn-padding">
+                            <a id="btn-login" onclick="OnPost()" class="btn btn-lg btn-warning btn-padding">
                                 <span class="glyphicon glyphicon-refresh"></span> Refresh
-                            </button>
-                            <a id="btn-login" asp-page="/Dashboard" class="btn btn-lg btn-warning btn-padding">
+                            </a>
+                            <a id="btn-login" asp-page="/Dashboard" class="btn btn-warning btn-padding">
                                 <span class="glyphicon glyphicon-chevron-left"></span> Back
                             </a>
-                            <a id="btn-login" asp-page="/Logout" class="btn btn-lg btn-success btn-padding">
+                            <a id="btn-login" asp-page="/Logout" class="btn btn-success btn-padding">
                                 <span class="glyphicon glyphicon-log-out"></span> Logout
                             </a>
-                            @*<a id="btn-cancel" href="#" class="btn btn-lg btn-danger btn-padding">
-                                    <span class="glyphicon glyphicon-remove"></span> Cancel
-                                </a>*@
                         </div>
                     </div>
                 </div>

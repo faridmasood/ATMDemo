@@ -6,14 +6,13 @@
 
 
 <div class="container">
-    <div class="row col-xs-12">
+    <div class="row col-xs-8 col-xs-offset-2">
         <div class="panel panel-info ">
             <!-- Place <h1></h1> below -->
             <div class="panel-heading">
                 <div class="panel-title text-uppercase text-center">@ViewData["Title"]</div>
                 <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">need iformation?</a></div>
             </div>
-
             <div class="row">
                 <div class="col-xs-12">
                     <!-- Place <h1></h1> below -->
@@ -28,66 +27,77 @@
                             </h4>
                         </div>
                     </div>
+                    @if (Model.Message != null)
+                    {
+                        <div class="alert alert-info text-center" role="alert" id="alertMsg">
+                            <h6 class="alert-link text-center">
+                                <i class="glyphicon glyphicon glyphicon-info-sign"></i>
+                                @Model.Message
+                            </h6>
+                        </div>
+                    }
                     <div class="row">
                         <div class="col-md-3 text-center">
                             <div id="sidePad">
-                                <a class="btn btn-lg btn-primary btn-padding" href="#">
+                                <a class="btn btn-lg btn-primary btn-padding" href="#" onclick="AddBigDigit('20')">
                                     <i class="fa fa-usd fa-1x pull-left"></i>20.00
                                 </a>
-                                <a class="btn btn-lg btn-primary btn-padding" href="#">
+                                <a class="btn btn-lg btn-primary btn-padding" href="#" onclick="AddBigDigit('50')">
                                     <i class="fa fa-usd fa-1x pull-left"></i>50.00
                                 </a>
-                                <a class="btn btn-lg btn-primary btn-padding" href="#">
+                                <a class="btn btn-lg btn-primary btn-padding" href="#" onclick="AddBigDigit('100')">
                                     <i class="fa fa-usd fa-1x pull-left"></i>100.00
                                 </a>
-                                <a class="btn btn-lg btn-primary btn-padding" href="#">
+                                <a class="btn btn-lg btn-primary btn-padding" href="#" onclick="AddBigDigit('500')">
                                     <i class="fa fa-usd fa-1x pull-left"></i>500.00
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-6 text-center">
-                            <form method="post">
-                                <input name="value" id="depositAmount" class="form-control input-lg" align="right" placeholder="0.00" />
-                                <!-- Number Keys -->
-                                <!-- TABLE -->
-                                <div id="pinPad">
-                                    <table class="table">
-                                        <tr>
-                                            <td><a id="btn1" href="#" class="btn btn-block btn-lg btn-info">1</a></td>
-                                            <td><a id="btn2" href="#" class="btn btn-block btn-lg btn-info">2</a></td>
-                                            <td><a id="btn3" href="#" class="btn btn-block btn-lg btn-info">3</a></td>
-                                            <td><a id="btn4" href="#" class="btn btn-block btn-lg btn-info">4</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a id="btn5" href="#" class="btn btn-block btn-lg btn-info">5</a></td>
-                                            <td><a id="btn6" href="#" class="btn btn-block btn-lg btn-info">6</a></td>
-                                            <td><a id="btn7" href="#" class="btn btn-block btn-lg btn-info">7</a></td>
-                                            <td><a id="btn8" href="#" class="btn btn-block btn-lg btn-info">8</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td><a id="btn9" href="#" class="btn btn-block btn-lg btn-info">9</a></td>
-                                            <td><a id="btn0" href="#" class="btn btn-block btn-lg btn-info">0</a></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="4">
-                                                <button class="btn btn-lg btn-primary text-uppercase">
-                                                    <span class="glyphicon glyphicon-ok-sign"></span>
-                                                    With Draw
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="4">
-                                                <a id="btnDelete" href="#" class="btn btn-lg btn-default text-uppercase">
-                                                    <span class="glyphicon glyphicon-arrow-left"></span> Clear
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div><!-- // Pin Pad -->
-                            </form>
+                        <div class="col-md-6">
+                            <div id="">
+                                <form method="post">
+                                    <!-- Number Keys -->
+                                    <!-- TABLE -->
+                                    <div id="calculator">
+                                        <table class="table table-responsive">
+                                            <tr>
+                                                <td colspan="8" align="center">
+                                                    <input id="demo" align="right" name="value" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><a id="one" href="#" onclick="AddDigit('1')" class="btn btn-block btn-lg btn-info">1</a></td>
+                                                <td><a id="two" href="#" onclick="AddDigit('2')" class="btn btn-block btn-lg btn-info">2</a></td>
+                                                <td><a id="three" href="#" onclick="AddDigit('3')" class="btn btn-block btn-lg btn-info">3</a></td>
+                                                <td><a id="four" href="#" onclick="AddDigit('4')" class="btn btn-block btn-lg btn-info">4</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a id="five" href="#" onclick="AddDigit('5')" class="btn btn-block btn-lg btn-info">5</a></td>
+                                                <td><a id="six" href="#" onclick="AddDigit('6')" class="btn btn-block btn-lg btn-info">6</a></td>
+                                                <td><a id="seven" href="#" onclick="AddDigit('7')" class="btn btn-block btn-lg btn-info">7</a></td>
+                                                <td><a id="eight" href="#" onclick="AddDigit('8')" class="btn btn-block btn-lg btn-info">8</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a id="nine" href="#" onclick="AddDigit('9')" class="btn btn-block btn-lg btn-info">9</a></td>
+                                                <td><a id="zero" href="#" onclick="AddDigit('0')" class="btn btn-block btn-lg btn-info">0</a></td>
+                                                <td colspan="2">
+                                                    <a id="clear" href="#" onclick="Clear()" class="btn btn-lg btn-default text-uppercase">
+                                                        <span class="glyphicon glyphicon-arrow-left"></span> Clear
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <button class="btn btn-lg btn-primary text-uppercase">
+                                                        <span class="glyphicon glyphicon-ok-sign"></span>
+                                                        With Draw
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div><!-- // Pin Pad -->
+                                </form>
+                            </div>
                         </div>
                         <div class="col-md-3 text-center">
                             <!-- Button -->
@@ -104,18 +114,12 @@
                     <div class="alert alert-danger text-center" role="alert">
                         <h6 class="alert-link text-center">
                             <i class="glyphicon glyphicon glyphicon-info-sign"></i>
-                            @Model.Message
-                            @*Click a button to get that amount of cash.*@
+                            Click a button to get that amount of cash.
                         </h6>
                         <h5 class="alert-link text-center"><i class="glyphicon glyphicon glyphicon-info-sign"></i> Or input an desired amount, Must be lower than $1000</h5>
-
                     </div>
                 </div><!--  // END column-->
-
             </div><!-- // END row-->
-
         </div> <!-- // END OPTIONS-->
-
-
     </div><!--  // END panel column-->
 </div> <!-- /container -->
