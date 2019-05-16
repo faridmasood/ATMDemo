@@ -3,9 +3,8 @@
 @{
     ViewData["Title"] = "Deposit";
 }
-<div class="container">
-    <div class="row col-md-12 text-center">
-        @*<div class=" col-md-12 col-md-offset-3 col-sm-8 col-sm-offset-2">*@
+<div class="container center-block">
+    <div class="row col-xs-8 col-xs-offset-2">
         <div class="panel panel-info ">
             <!-- Place <h1></h1> below -->
             <div class="panel-heading">
@@ -14,7 +13,7 @@
             </div>
             <div class="panel">
                 <div class="alert alert-success text-center" role="alert">
-                    <a class="alert-link text-center"><i class="glyphicon glyphicon-credit-card"></i>@Model.HttpContext.User.Claims.FirstOrDefault().Value</a>
+                    <a class="alert-link text-center"><i class="glyphicon glyphicon-credit-card"></i> @Model.HttpContext.User.Claims.FirstOrDefault().Value</a>
                 </div>
                 <div class="tile">
                     <h4 class="text-uppercase balance">
@@ -22,12 +21,15 @@
                         <span class="glyphicon glyphicon-usd"></span>@Model.Balance
                     </h4>
                 </div>
-                <div class="alert alert-danger text-center" role="alert">
+                @if (Model.Message != null)
+                {
+                <div class="alert alert-danger text-center" role="alert" id="alertDiv">
                     <h6 class="alert-link text-center">
                         <i class="glyphicon glyphicon glyphicon-info-sign"></i>
                         @Model.Message
                     </h6>
                 </div>
+                }
                 <div class="row">
                     <div class="col-md-1 text-center"></div>
                     <div class="col-md-8">
@@ -38,50 +40,48 @@
                                     <!-- <h4 class="row">Calculator</h4> -->
                                     <form align="center" method="post">
                                         <table>
-                                            <!-- <h3 class="row" align="center"><b>Calculator</b></h3> -->
                                             <tr>
                                                 <td colspan="8" align="center">
                                                     <input id="demo" align="right" name="value" />
-                                                    <!--  <input type="text" name="display" id=""> -->
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <button type="button" id="one" value="1" onclick="AddDigit('1')" class="btn-lg btn-success">1</button>
+                                                    <input type="button" id="one" value="1" onclick="AddDigit('1')" class="btn-lg ">
                                                 </td>
                                                 <td>
-                                                    <button type="button" id="two" value="2" onclick="AddDigit('2')" class="btn-lg btn-success">2</button>
+                                                    <input type="button" id="two" value="2" onclick="AddDigit('2')" class="btn-lg">
                                                 </td>
                                                 <td>
-                                                    <input type="button" id="three" value="3" onclick="AddDigit('3')" class="btn-lg btn-success">
+                                                    <input type="button" id="three" value="3" onclick="AddDigit('3')" class="btn-lg">
                                                 </td>
                                                 <td>
-                                                    <input type="button" id="four" value="4" onclick="AddDigit('4')" class="btn-lg btn-success">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <input type="button" id="five" value="5" onclick="AddDigit('5')" class="btn-lg btn-success">
-                                                </td>
-                                                <td>
-                                                    <input type="button" id="six" value="6" onclick="AddDigit('6')" class="btn-lg btn-success">
-                                                </td>
-                                                <td>
-                                                    <input type="button" id="seven" value="7" onclick="AddDigit('7')" class="btn-lg btn-success">
-                                                </td>
-                                                <td>
-                                                    <input type="button" id="eight" value="8" onclick="AddDigit('8')" class="btn-lg btn-success">
+                                                    <input type="button" id="four" value="4" onclick="AddDigit('4')" class="btn-lg">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <input type="button" id="nine" value="9" onclick="AddDigit('9')" class="btn-lg btn-success">
+                                                    <input type="button" id="five" value="5" onclick="AddDigit('5')" class="btn-lg">
                                                 </td>
                                                 <td>
-                                                    <input type="button" id="zero" value="0" onclick="AddDigit('0')" class="">
+                                                    <input type="button" id="six" value="6" onclick="AddDigit('6')" class="btn-lg">
+                                                </td>
+                                                <td>
+                                                    <input type="button" id="seven" value="7" onclick="AddDigit('7')" class="btn-lg">
+                                                </td>
+                                                <td>
+                                                    <input type="button" id="eight" value="8" onclick="AddDigit('8')" class="btn-lg">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="button" id="nine" value="9" onclick="AddDigit('9')" class="btn-lg">
+                                                </td>
+                                                <td>
+                                                    <input type="button" id="zero" value="0" onclick="AddDigit('0')" class="btn-lg">
                                                 </td>
                                                 <td colspan="2">
-                                                    <a id="btnDelete" href="#" class="btn btn-lg btn-default text-uppercase">
+                                                    <a id="clear" href="#" onclick="Clear()" class="btn btn-lg btn-default text-uppercase">
                                                         <span class="glyphicon glyphicon-arrow-left"></span> Clear
                                                     </a>
                                                 </td>

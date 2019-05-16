@@ -36,9 +36,29 @@ namespace ATM.Services
             return card.Id;
         }
 
+        public bool ChangeMobileNum(string cardNumber, int oldMbnum, int newMbnum)
+        {
+            var userId = _unitOfWork.CardRepository.GetByCardNumber(cardNumber).UserId;
+            User user = _unitOfWork.UserRepository.GetUser(userId);
+            var _oldMbnum = user.MobileNumber;
+
+            if (_oldMbnum == oldMbnum)
+            {
+                user.MobileNumber = newMbnum;
+                return true;
+            }
+            return false;
+        }
         public bool Verify(string cardNumber)
         {
+            
             throw new System.NotImplementedException();
+        }
+
+        public decimal GetCardBalance(string cardNumber)
+        {
+            Card card = _unitOfWork.CardRepository.GetByCardNumber(cardNumber);
+            return card.Balance;
         }
     }
 }

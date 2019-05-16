@@ -14,39 +14,34 @@
             <div class="row" style="padding:10px">
                 <div class="col-xs-3">
                     <div class="tile">
-                        <a asp-page="/Withdraw">
+                        <a asp-page="/Withdraw" title="Make an easy cash withdraw!">
                             <img src="~/images/quick_cash.png" alt="Quick Cash" class="tile-image big-illustration">
-                            <h3 class="tile-title">Quick Cash</h3>
+                            <h4 class="tile-title"><b>Quick Cash</b></h4>
                         </a>
-                        <p>Make an easy cash withdraw!</p>
                     </div>
                 </div>
                 <div class="col-xs-3">
                     <div class="tile">
-                        <a asp-page="/Transactions">
+                        <a asp-page="/Transactions"title="View available transacions and more..">
                             <img src="~/images/icons/png/Clipboard.png" alt="Accounts" class="tile-image" />
-                            @*<img src="~/images/accounts_checklist.png" alt="Accounts" class="tile-image">*@
-                            <h3 class="tile-title">Transactions</h3>
+                            <h4 class="tile-title"><b>Transactions</b></h4>
                         </a>
-                        <p>View available transacions and more...</p>
                     </div>
                 </div>
                 <div class="col-xs-3">
                     <div class="tile">
-                        <a asp-page="/Deposit">
+                        <a asp-page="/Deposit" title="Make a easy deposite">
                             <img src="~/images/deposit_vault.png" alt="Deposits" class="tile-image">
-                            <h3 class="tile-title">Make a Deposite</h3>
+                            <h4 class="tile-title"><b>Make a Deposite</b></h4>
                         </a>
-                        <p>Make a easy deposite.</p>
                     </div>
                 </div>
                 <div class="col-xs-3">
                     <div class="tile">
-                        <a asp-page="/ChangePin">
+                        <a asp-page="/ChangePin" title="Edit your Card Pin">
                             <img src="~/images/accounts_checklist.png" alt="Accounts" class="tile-image">
-                            <h3 class="tile-title">Change Pin</h3>
+                            <h4 class="tile-title"><b>Change Pin</b></h4>
                         </a>
-                        <p>Edit your Card Pin </p>
                     </div>
                 </div>
                 <!-- Button -->
@@ -56,9 +51,6 @@
                         <a id="btn-login" asp-page="/Logout" class="btn btn-success btn-padding">
                             <span class="glyphicon glyphicon-log-out"></span> Logout
                         </a>
-                        <!-- <a id="btn-cancel" href="#" class="btn btn-danger btn-padding">
-                            <span class="glyphicon glyphicon-remove"></span> Cancel
-                        </a> -->
                     </div>
                 </div>
             </div> <!-- // END OPTIONS-->

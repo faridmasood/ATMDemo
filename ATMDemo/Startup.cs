@@ -60,6 +60,7 @@ namespace ATMDemo
                 }
             );
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddMvc();
             // Mapping entities to dto 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Transaction, TransactionDTO>()).CreateMapper();
             services.AddSingleton(config);

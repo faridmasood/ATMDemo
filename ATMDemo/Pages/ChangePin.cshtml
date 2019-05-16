@@ -17,9 +17,17 @@
                 <div class="col-md-12">
                     <!-- Place <h1></h1> below -->
                     <div class="alert alert-success text-center" role="alert">
-                        @*<a href="#" class="alert-link text-center"><i class="glyphicon glyphicon-credit-card"></i> @Model.transactionDTOs.LastOrDefault().Card.CardNumber </a>*@
-                        <a href="#" class="alert-link text-center"><i class="glyphicon glyphicon-credit-card"></i> ####-####-#####-435 </a>
+                        <a class="alert-link text-center"><i class="glyphicon glyphicon-credit-card"></i> @Model.HttpContext.User.Claims.FirstOrDefault().Value</a>
                     </div>
+                    @if (Model.StatusMessage != null)
+                    {
+                        <div class="alert alert-success text-center" role="alert">
+                            <h6 class="alert-link text-center">
+                                <i class="glyphicon glyphicon glyphicon-info-sign"></i>
+                                @Model.StatusMessage
+                            </h6>
+                        </div>
+                    }
                     <!-- Change Pin -->
                     <div class="col-md-5 ">
                         <div class="panel panel-warning">
@@ -38,17 +46,18 @@
                                     <label for="rnewPin">Confirm New Pin:</label>
                                     <input type="text" class="form-control" id="rnewPin" placeholder="Enter New Pin" name="rnewPin">
                                 </div>
-                                <button type="submit" class="btn btn-lg btn-primary btn-padding">
+                                <button type="submit" class="btn btn-lg btn-primary btn-padding" asp-page-handler="Pin">
                                     <span class="glyphicon glyphicon-ok"></span> Submit
                                 </button>
                             </form>
                         </div>
                     </div>
+                    <!-- Change Mobile number -->
                     <div class="col-md-5">
                         <div class="panel panel-info">
                             <!-- Default panel contents -->
                             <div class="panel-heading text-center">Change Mobile Number</div>
-                            <form style="padding:1rem">
+                            <form style="padding:1rem" method="post">
                                 <div class="form-group">
                                     <label for="oldMbnum">Old Mobile Number:</label>
                                     <input type="text" class="form-control" id="oldmb" placeholder="Enter Old Mobile Number" name="oldMbnum">
@@ -61,7 +70,7 @@
                                     <label for="rnewMbnum">Confirm New Mobile Number:</label>
                                     <input type="text" class="form-control" id="rnewMbnum" placeholder="Enter New Mobile Number" name="rnewMbnum">
                                 </div>
-                                <button type="submit" class="btn btn-lg btn-primary btn-padding">
+                                <button type="submit" class="btn btn-lg btn-primary btn-padding" asp-page-handler="Mob">
                                     <span class="glyphicon glyphicon-ok"></span> Submit
                                 </button>
                             </form>

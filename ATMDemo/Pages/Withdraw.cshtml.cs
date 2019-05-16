@@ -13,18 +13,25 @@ namespace ATMDemo.Pages
     {
         private readonly IWithdrawService _withdrawService;
         private readonly ITransactionService _transactionService;
+        private readonly ICardService _cardService;
+
         [TempData] public string Message { get; set; }
         public decimal Balance { get; set; }
 
         public ICollection<TransactionDTO> transactionDTOs = new List<TransactionDTO>();
-        public WithdrawModel(IWithdrawService withdrawService, ITransactionService transactionService)
+        public WithdrawModel(
+            IWithdrawService withdrawService,
+            ITransactionService transactionService,
+            ICardService cardService)
         {
             _withdrawService = withdrawService;
             _transactionService = transactionService;
+            _cardService = cardService;
         }
         public void OnGet()
         {
-            Balance = _transactionService.GetCurrentBalance(HttpContext.User.Claims.First().Value);
+            //Balance = _transactionService.GetCurrentBalance(HttpContext.User.Claims.First().Value);
+            Balance = _cardService.GetCardBalance(HttpContext.User.Claims.First().Value);
         }
         public async Task<IActionResult> OnPostAsync(int value)
         {
